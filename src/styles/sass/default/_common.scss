@@ -1,0 +1,22 @@
+.border_box {
+    @include box_sizing(border-box);
+}
+
+.Spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 22;
+    width: 100%;
+    height: 100%;
+    background-color: $background_with_opacity;
+    
+    > .inner {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}

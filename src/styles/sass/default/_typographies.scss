@@ -1,0 +1,81 @@
+@mixin title_xlarge_mixin() {
+    font-size: $title_xlarge_size;
+    line-height: $title_xlarge_height;
+}
+
+.title_xlarge {
+    @include title_xlarge_mixin();
+}
+
+@mixin title_large_mixin() {
+    font-size: $title_large_size;
+    line-height: $title_large_height;
+}
+
+.title_large {
+    @include title_large_mixin();
+}
+
+@mixin title_normal_mixin() {
+    font-size: $title_normal_size;
+    line-height: $title_normal_height;
+}
+
+.title_normal {
+    @include title_normal_mixin();
+}
+
+@mixin title_small_mixin() {
+    font-size: $title_small_size;
+    line-height: $title_small_height;
+}
+
+.title_small {
+    @include title_small_mixin();
+}
+
+@mixin text_xlarge_mixin() {
+    font-size: $text_xlarge_size;
+    line-height: $text_xlarge_height;
+}
+
+.text_xlarge {
+    @include text_xlarge_mixin();
+}
+
+
+@mixin text_large_mixin() {
+    font-size: $text_large_size;
+    line-height: $text_large_height;
+}
+
+.text_large {
+    @include text_large_mixin();
+}
+
+@mixin text_normal_mixin() {
+    font-size: $text_normal_size;
+    line-height: $text_normal_height;
+}
+
+.text_normal {
+    @include text_normal_mixin();
+}
+
+@mixin text_small_mixin() {
+    font-size: $text_small_size;
+    line-height: $text_small_height;
+}
+
+.text_small {
+    @include text_small_mixin();
+}
+
+@mixin text_smaller_mixin() {
+    font-size: $text_smaller_size;
+    line-height: $text_smaller_height;
+}
+
+.text_smaller {
+    @include text_smaller_mixin();
+}

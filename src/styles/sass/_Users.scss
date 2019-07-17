@@ -1,0 +1,80 @@
+.Users {
+  width: 30%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: $white_grey;
+
+  > .self {
+    flex: 0 1 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black_light;
+
+    > h4 {
+      @extend .title_small;
+      color: $green;
+    }
+  }
+
+  > .friends {
+    flex: 1 1 auto;
+    // background-color: $white_grey;
+    padding: 10px 20px;
+    overflow: auto;
+
+    > ul {
+      > li {
+        @include transition;
+        @extend .text_normal;
+        
+        color: $grey;
+        font-style: italic;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+        
+        > i {
+          @extend .text_small;
+        }
+
+        &.active {
+          color: $green_dark;
+          font-style: normal;
+        }
+
+        &.live {
+          background-color: $grey_white;
+          border: 1px solid $grey;
+        }
+
+        &:hover {
+          background-color: $grey_white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    width: 50%;
+    background: $white;
+
+    > .friends {
+      > ul {
+        > li {
+          &.live {
+            background-color: transparent;
+            border: none;
+
+            &:hover {
+              background-color: $grey_white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

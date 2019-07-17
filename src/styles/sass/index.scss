@@ -1,0 +1,47 @@
+@import './default/index';
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $white;
+
+  * {
+    @extend .border_box;
+  }
+
+  > #root {
+    max-width: 1250px;
+    margin: auto;
+    height: 100vh;
+
+    > .App {
+      display: flex;
+      height: 100%;
+      width: 100%;
+
+      @import './Auth';
+      @import './Users';
+      @import './Message';
+    }
+  }
+
+  @include tablet {
+    > #root {
+      overflow: hidden;
+      height: calc(100vh - 80px);
+
+      > .App {
+        @include transition;
+        width: 200%;
+        margin-left: 0%;
+
+        &.active {
+          margin-left: -100%;
+        }
+      }
+    }
+  }
+}

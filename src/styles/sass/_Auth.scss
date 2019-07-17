@@ -1,0 +1,63 @@
+.Auth {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $background_with_opacity;
+
+  > form {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: $white;
+    text-align: center;
+
+    > h4 {
+      @extend .title_small;
+      text-align: center;
+      color: $green_dark;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    > input {
+      @include transition;
+      @extend .text_small;
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-bottom: 1px solid $grey;
+      border-radius: 0px;
+      color: $black_light;
+
+      &:focus {
+        border-bottom: 1px solid $green_dark;
+      }
+    }
+
+    > .error {
+      @extend .text_small;
+      color: $red;
+      margin-bottom: 0;
+    }
+
+    > button {
+      @include transition;
+      @extend .text_small;
+      margin: 20px;
+      padding: 10px;
+      color: $black_light;
+
+      &:hover {
+        border: 1px solid $green_dark;
+      }
+    }
+  }
+}

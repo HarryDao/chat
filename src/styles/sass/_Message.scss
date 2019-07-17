@@ -1,0 +1,198 @@
+.conversation {
+  width: 70%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-right: 1px solid $grey;
+
+  > .Messages {
+    flex: 1 1 auto;
+    position: relative;
+    overflow: auto;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+
+    > h4 {
+      @extend .title_small;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      color: $grey;
+      background-color: $white_grey;
+
+      > button {
+        display: none;
+        @extend .text_large;
+        position: absolute;
+        height: 100%;
+        left: 10px;
+        top: 0;
+        padding-left: 5px;
+        border: none;
+        background-color: transparent;
+        color: $green_dark;
+      }
+
+      &.empty {
+        @extend .title_large;
+        color: $grey;
+        background: $white;    
+      }
+
+      &.active {
+        color: $green_dark;
+      }
+    }
+
+    > .inner {
+      width: 100%;
+      background-color: $white;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      -webkit-justify-content: flex-end;
+
+      > ul {
+        padding: 10px;
+        color: $black_light;
+        width: 100%;
+
+        > .MessageListItem {
+          width: 100%;
+          margin: 5px;
+
+          > h5 {
+            @extend .text_small;
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+          }
+
+          > .content {
+            display: flex;
+            flex-direction: row;
+
+            > p {
+              @include transition;
+              max-width: 70%;
+              @extend .text_small;
+              background-color: $grey_white;
+              padding: 15px;
+              border-radius: 0 15px 15px 0;
+            }
+
+            &.own {
+              text-align: right;
+              flex-direction: row-reverse;
+  
+              > p {
+                color: $white;
+                background-color: $green_darker;
+                border-radius: 15px 0 0 15px;
+              }
+            }
+  
+            &.first {
+              margin-top: 10px;
+              > p {
+                border-top-left-radius: 15px;
+  
+              }
+  
+              &.own > p {
+                  border-top-right-radius: 15px;
+              }
+            }
+  
+            &.last {
+              > p {
+                border-bottom-left-radius: 15px;
+              }
+  
+              &.own > p {
+                border-bottom-right-radius: 15px;
+              }
+            }
+          }
+        }
+
+        > .IsTyping {
+          position: relative;
+          width: 60px;
+          @extend .text_small;
+          background-color: $grey_white;
+          padding: 5px;
+          border-radius: 15px;
+          margin: 5px;
+          text-align: center;
+        }
+      }
+
+      > .MessageIsTyping {
+        @extend .text_small;
+        padding: 10px;
+        font-style: italic;
+        color: $green;
+      }
+    }
+
+    &.safari {
+      overflow: visible;
+
+      > .inner {
+        > ul {
+          overflow: auto;
+        }
+      }
+    }
+  }
+
+  > .MessageInput {
+    flex: 0 1 80px;
+    min-height: 80px;
+    background-color: $white;
+    border-top: 1px solid $grey;
+    position: relative;
+
+    > input {
+      @extend .text_small;
+      @include transition;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      background-color: $white;
+      border-radius: 0;
+
+      &:disabled {
+        filter: grayscale(100%);
+        background-color: $grey_white;
+        color: $grey;
+      }
+    }
+  }
+
+  @include tablet {
+    width: 50%;
+
+    > .Messages {
+      > h4 {
+        > button {
+          display: block;
+        }
+      }
+
+      > .inner {
+        > ul {
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
